@@ -1,0 +1,64 @@
+{
+    "info": [
+        {
+            "coin": "btc",
+            "name" : "Bitcoin",
+            "url" : "https://cryptologos.cc/logos/bitcoin-btc-logo.svg?v=013",
+            "price": "3680000.0"
+        },
+        {
+            "coin": "eth",
+            "name" : "Ethereum",
+            "url" : "https://cryptologos.cc/logos/ethereum-eth-logo.svg?v=013",
+            "price": "247364.0"
+        },
+        {
+            "coin": "trx",
+            "name" : "Tron",
+            "url" : "https://cryptologos.cc/logos/tron-trx-logo.svg?v=013",
+            "price": "6.8085"
+        },
+        {
+            "coin": "eos",
+            "name" : "EOS",
+            "url" : "https://cryptologos.cc/logos/eos-eos-logo.svg?v=013",
+            "price": "409.05"
+        },
+        {
+            "coin": "zil",
+            "name" : "Zilliqa",
+            "url" : "https://cryptologos.cc/logos/zilliqa-zil-logo.svg?v=013",
+            "price": "8.14"
+        },
+        {
+            "coin": "bat",
+            "name" : "Bat",
+            "url" : "https://cryptologos.cc/logos/basic-attention-token-bat-logo.svg?v=013",
+            "price": "59.002"
+        },
+        {
+            "coin": "bch",
+            "name" : "Bitcoin Cash",
+            "url" : "https://cryptologos.cc/logos/bitcoin-cash-bch-logo.svg?v=013",
+            "price": "51755.0"
+        },
+        {
+            "coin": "ada",
+            "name" : "Cardano",
+            "url" : "https://cryptologos.cc/logos/cardano-ada-logo.svg?v=013",
+            "price": "190.0"
+        },
+        {
+            "coin": "doge",
+            "name" : "Dogecoin",
+            "url" : "https://cryptologos.cc/logos/dogecoin-doge-logo.svg?v=013",
+            "price": "24.74"
+        },
+        {
+            "coin": "dot",
+            "name" : "Polkadot",
+            "url" : "https://cryptologos.cc/logos/polkadot-new-dot-logo.svg?v=013",
+            "price": "2109.0"
+        }
+    ]
+}
