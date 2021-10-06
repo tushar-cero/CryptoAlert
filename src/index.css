@@ -1,13 +1,530 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/*----------GLOBAL CSS----------*/
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/*font-family: 'Work Sans', sans-serif;*/
+
+
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    font-family: 'Work Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+html { 
+    -webkit-font-smoothing: antialiased; 
+    overflow-y: scroll;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+ul {
+    list-style: none;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+img{
+    width: 100%;
+}
+label, input[type=button], input[type=submit], button { 
+    cursor: pointer; 
+}
+
+
+/*----------PSUDO CLASSES----------*/
+
+
+
+:root {
+    --primary-color: #091133;
+    --secondary-color: #acbbfb;
+    --border-color: rgb(235, 235, 235);
+
+    --grey-color: rgb(165, 165, 165);
+    --dark-grey-color: rgb(100, 100, 100);
+
+    --white-color: #fff;
+    --black-color: #000;
+}
+
+
+
+/*----------UTILITY CLASSES----------*/
+
+
+
+.container{
+    max-width: 458px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin:0 auto;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
+
+.btn-container{
+    text-align: center;
+    margin: 32px;
+    padding-top: 16px;
+}
+.btn-container .btn{
+    padding: 10px 16px;
+    color: var(--primary-color);
+    background-color: var(--white-color);
+    border-radius: 5px;
+    border: var(--white-color) 1px solid;
+    font-weight: 500;
+}
+.btn-container .btn:hover{
+    color: var(--white-color);
+    background-color: var(--primary-color);
+    transition: 0.35s ease-out;
+}
+
+
+
+/*----------ID'S CLASSES----------*/
+
+
+/* Header */
+
+header .header-grid{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 16px;
+}
+header .header-grid .logo,
+header .header-grid .logo img{
+    height: 40px;
+    width: auto;
+    padding: 0;
+    margin: 0;
+}
+header .header-grid .menu,
+header .header-grid .menu i{
+    font-size: 28px;
+    color: var(--primary-color);
+}
+
+
+
+/* Landing */
+
+
+
+.Error{
+    background-image: url('./images/error.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 40vh;
+}
+.Error::after {
+    content: "";
+    position: absolute;
+    top: 72px;
+    left: 0;
+    width: 100%;
+    height: 40vh;
+    z-index: 1; /*higher the z-index, closer it is to you*/
+    background: rgba(0, 0, 0, 0.4);
+}
+.Error .container{
+    position: relative;
+    z-index: 2;
+    height: 100%;
+}
+.Error .container .info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    color: var(--white-color);
+}
+
+
+
+/* Landing */
+
+
+
+.Landing{
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    height: auto;
+    padding-top: 48px;
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+}
+.Landing h1{
+    font-size: 32px;
+    padding-bottom: 24px;
+}
+.Landing .bgi{
+    background-image: url('./images/landing.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 50vh;
+}
+
+
+
+/* About */
+
+
+
+.About{
+    margin: 0 4px 8px 4px;
+    padding: 16px 30px;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border-radius: 8px
+}
+.About .heading{
+    font-size: 32px;
+    font-weight: 600;
+    padding: 16px 0;
+}
+.About .about-detail{
+    font-size: 18px;
+}
+
+section{
+    padding: 24px 0px;
+}
+section h1{
+    text-align: center;
+    padding: 16px;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+section .advantage-grid{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+section .advantage-grid .advantage-card{
+    padding: 24px;
+    margin: 16px;
+    border: var(--primary-color) 1.5px solid;
+    border-radius: 5px;
+}
+section .advantage-grid .advantage-card .logo{
+    display: block;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 8px 12px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    width: fit-content;
+    font-size: 24px;
+}
+section .advantage-grid .advantage-card h3,
+section .advantage-grid .advantage-card p{
+    padding: 8px 0;
+    color: var(--primary-color);
+}
+
+
+
+/* CryptoCurrency */
+
+
+
+.CryptoCurrency{
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 50px 0;
+}
+.CryptoCurrency .grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 16px;
+}
+.CryptoCurrency .grid .card{
+    position: relative;
+    background-color: var(--white-color);
+    color: var(--black-color);
+    padding: 24px 16px 16px 16px;
+    margin: 15px 0;
+    text-align: center;
+    border-radius: 10px;
+}
+.CryptoCurrency .grid .selectedCard{
+    position: relative;
+    background-color: var(--secondary-color);
+    color: var(--black-color);
+    padding: 24px 16px 16px 16px;
+    margin: 15px 0;
+    text-align: center;
+    border-radius: 10px;
+}
+.CryptoCurrency .grid .card figure,
+.CryptoCurrency .grid .selectedCard figure{
+    position: absolute;
+    top: -35px;
+    left: 0;
+}
+.CryptoCurrency .grid .card figure,
+.CryptoCurrency .grid .selectedCard figure,
+.CryptoCurrency .grid .card figure img,
+.CryptoCurrency .grid .selectedCard figure img{
+    height: 70px;
+    width: 70px;
+    text-align: center;
+    display: block;
+    width: 100%;
+}
+.CryptoCurrency .grid .card .info .name,
+.CryptoCurrency .grid .selectedCard .info .name{
+    padding-top:30px;
+    font-size: 28px;
+    font-weight: 600;
+}
+.CryptoCurrency .grid .card .info .cost,
+.CryptoCurrency .grid .selectedCard .info .cost{
+    padding: 0.5rem;
+    font-size: 20px;
+    font-weight: 400;
+}
+.CryptoCurrency .grid .card form input,
+.CryptoCurrency .grid .selectedCard form input{
+    background: transparent;
+    border: var(--primary-color) 1px solid;
+    color: var(--black-color);
+    margin: 16px 0;
+    padding: 8px 16px;
+    border-radius: 5px;
+    width: 100%;
+}
+.CryptoCurrency .grid .card .card-btn-container,
+.CryptoCurrency .grid .selectedCard .card-btn-container{
+    text-align: center;
+    padding: 16px 0;
+}
+.CryptoCurrency .grid .card .card-btn-container .card-btn,
+.CryptoCurrency .grid .selectedCard .card-btn-container .card-btn{
+    padding: 10px 16px;
+    color: var(--white-color);
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    border: var(--primary-color) 1px solid;
+    font-weight: 500;
+}
+.CryptoCurrency .grid .card .card-btn-container .card-btn:hover,
+.CryptoCurrency .grid .selectedCard .card-btn-container .card-btn:hover{
+    color: var(--primary-color);
+    background-color: var(--white-color);
+    border: var(--primary-color) 1px solid;
+    transition: 0.35s ease-out;
+}
+
+
+
+.CryptoCurrency .email{
+    margin-top: 36px;
+    border: var(--dark-grey-color) 1px solid;
+    border-radius: 5px;
+    padding: 16px;
+}
+.CryptoCurrency .email .Email-Input{
+    text-align: center;
+    margin-top: 16px;
+}
+.CryptoCurrency .email .Email-Input input{
+    padding: 10px 16px;
+    background-color: transparent;
+    color: var(--white-color);
+    border: var(--dark-grey-color) 1px solid;
+    border-radius: 5px;
+    width: 100%;
+}
+
+
+
+/* Policies and Conditions */
+
+
+
+.Tnc .heading{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    width: 100%;
+    padding: 24px 10px;
+    margin-bottom: 24px;
+    border-radius: 5px;
+}
+.Tnc .heading div i{
+    font-size: 48px;
+}
+.Tnc .heading div h1{
+    font-size: 28px;
+}
+.Tnc .heading div p{
+    font-size: 10px;
+    color: var(--grey-color);
+}
+.Tnc .body div{
+    padding: 5px;
+    color: #333;
+}
+.Tnc .body div h1{
+    font-size: 20px;
+    padding: 5px 0;
+}
+.Tnc .body div p{
+    font-size: 16px;
+    padding-bottom: 5px;
+}
+
+
+
+/* Footer */
+
+
+
+footer{
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 32px 0;
+}
+
+footer .footer-grid{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 16px;
+}
+footer .footer-grid .logo,
+footer .footer-grid .logo img{
+    height: 60px;
+    width: auto;
+}
+footer .footer-grid ul{
+    font-size: 12px;
+    color: var(--grey-color);
+}
+footer .footer-grid ul li{
+    margin-bottom: 0.5rem;
+}
+footer .footer-grid ul .link-head{
+    font-weight: 600;
+    font-size: 14px;
+}
+footer .footer-grid .social-media,
+footer .footer-grid .social-media i{
+    font-size: 24px;
+}
+footer .footer-grid .social-media ul li{
+    margin-bottom: 1.25rem;
+}
+
+footer .disclaimer{
+    padding: 10px;
+    font-size: 14px;
+    color: var(--grey-color);
+}
+
+footer a:hover{
+    text-decoration: underline;
+    transition: 0.35s linear;
+}
+footer .fa-twitter:hover{
+    color: #1DA1F2;
+    transition: 0.35s ease-in;
+}
+footer .fa-github:hover{
+    color: #fff;
+    transition: 0.35s ease-in;
+}
+footer .fa-instagram:hover{
+    color: transparent;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    transition: 0.35s ease-in;
+}
+
+
+
+/*----------MEDIA QUERY----------*/
+
+
+
+/*@media(max-width: 1000px){
+    
+}*/
+
+
+
+/*----------CSS ANIMATION----------*/
+
+
+ 
+@keyframes slideInFromLeft{
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+@keyframes slideInFromRight{
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+@keyframes slideInFromTop{
+    0%{
+        transform: translateY(-100%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+@keyframes slideInFromBottom{
+    0%{
+        transform: translateY(100%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}     
